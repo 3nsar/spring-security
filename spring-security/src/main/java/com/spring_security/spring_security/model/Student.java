@@ -1,7 +1,4 @@
-package com.spring_security.spring_security;
-
-
-import org.springframework.stereotype.Component;
+package com.spring_security.spring_security.model;
 
 
 public class Student {
