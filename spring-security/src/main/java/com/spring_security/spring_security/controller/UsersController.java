@@ -2,6 +2,7 @@ package com.spring_security.spring_security.controller;
 
 import com.spring_security.spring_security.model.Users;
 import com.spring_security.spring_security.repo.UserRepo;
+import com.spring_security.spring_security.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,15 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class UsersController {
 
 
-    UserRepo userRepo;
+    UserService userService;
 
-    public UsersController(UserRepo userRepo){
-        this.userRepo = userRepo;
+    public UsersController(UserService userService){
+        this.userService = userService;
     }
 
     @PostMapping("/register")
     public Users register(@RequestBody Users user){
-
+            return userService.register(user);
     }
 
 
